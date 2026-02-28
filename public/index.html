@@ -3,895 +3,730 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruta al Terreno — C.C.1-03-032-0883 | Baja Sur Realtors</title>
-    <meta name="description" content="Ruta de manejo desde Hotel California, Todos Santos hasta el terreno C.C.1-03-032-0883 en Baja California Sur.">
-    <meta property="og:title" content="Ruta al Terreno C.C.1-03-032-0883 — Baja Sur Realtors">
-    <meta property="og:description" content="Indicaciones de manejo y mapa interactivo para llegar al terreno en BCS, México.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Cómo Llegar — Terreno C.C.1-03-032-0883</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
+            --blue: #4285f4;
+            --blue-dark: #1a73e8;
+            --green: #34a853;
+            --red: #ea4335;
+            --dark: #202124;
+            --dark2: #3c4043;
+            --gray: #5f6368;
+            --gray-light: #dadce0;
+            --gray-bg: #f1f3f4;
+            --bg: #f8f9fa;
+            --white: #fff;
             --gold: #b8964e;
-            --gold-light: #d4b978;
-            --gold-dark: #96783e;
-            --dark: #1a1a2e;
-            --dark-soft: #2a2a4e;
-            --bg: #f6f3ee;
-            --bg-warm: #faf8f4;
-            --text: #333;
-            --text-light: #777;
-            --radius: 12px;
-            --shadow: 0 4px 24px rgba(0,0,0,0.06);
-            --shadow-lg: 0 8px 40px rgba(0,0,0,0.10);
+            --gold-bg: #fef7e0;
         }
 
-        body {
+        html, body {
+            height: 100%;
             font-family: 'Inter', -apple-system, sans-serif;
             background: var(--bg);
-            color: var(--text);
-            min-height: 100vh;
+            color: var(--dark);
             -webkit-font-smoothing: antialiased;
         }
 
-        /* ─── HEADER ─── */
-        .header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            padding: 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .header-bg {
-            position: absolute;
-            inset: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><circle cx="30" cy="30" r="1" fill="rgba(184,150,78,0.08)"/></svg>');
-            pointer-events: none;
-        }
-        .header-inner {
-            position: relative;
-            padding: 36px 24px 32px;
-        }
-        .badge {
-            display: inline-block;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--gold);
-            border: 1.5px solid rgba(184,150,78,0.35);
-            padding: 7px 22px;
-            border-radius: 3px;
-            margin-bottom: 18px;
-            backdrop-filter: blur(4px);
-        }
-        .header h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(24px, 5vw, 38px);
-            font-weight: 600;
-            color: #fff;
-            letter-spacing: 0.5px;
-            line-height: 1.2;
-        }
-        .header h1 span { color: var(--gold); }
-        .header-sub {
-            font-size: 13px;
-            color: rgba(255,255,255,0.5);
-            margin-top: 8px;
-            letter-spacing: 0.5px;
-        }
-        .gold-line {
-            height: 3px;
-            background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
-        }
-
-        /* ─── CONTAINER ─── */
-        .container {
-            max-width: 1040px;
-            margin: 0 auto;
-            padding: 36px 20px 60px;
-        }
-
-        /* ─── STAT CARDS ─── */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 14px;
-            margin-bottom: 30px;
-        }
-        .stat {
-            background: #fff;
-            border: 1px solid rgba(184,150,78,0.12);
-            border-radius: var(--radius);
-            padding: 20px 18px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .stat:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
-        .stat-icon {
-            width: 36px;
-            height: 36px;
-            margin: 0 auto 10px;
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .stat-icon svg { width: 18px; height: 18px; color: #fff; }
-        .stat-label {
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--gold-dark);
-            margin-bottom: 4px;
-        }
-        .stat-value {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--dark);
-        }
-        .stat-value.loading {
-            font-size: 13px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            color: #bbb;
-        }
-
-        /* ─── ROUTE ENDPOINTS ─── */
-        .endpoints {
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            gap: 0;
-            align-items: center;
-            margin-bottom: 28px;
-        }
-        .endpoint {
-            background: #fff;
-            border-radius: var(--radius);
-            padding: 20px 22px;
-            border: 1px solid rgba(184,150,78,0.12);
-            box-shadow: var(--shadow);
-        }
-        .endpoint-connector {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 0 12px;
-        }
-        .connector-line {
-            width: 40px;
-            height: 2px;
-            background: linear-gradient(90deg, var(--gold), var(--gold-light));
-            position: relative;
-        }
-        .connector-line::after {
-            content: '→';
-            position: absolute;
-            right: -6px;
-            top: -10px;
-            color: var(--gold);
-            font-size: 16px;
-        }
-        .connector-label {
-            font-size: 10px;
-            color: var(--text-light);
-            margin-top: 4px;
-            letter-spacing: 1px;
-        }
-        .ep-marker {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            font-size: 13px;
-            font-weight: 800;
-            margin-right: 10px;
-            vertical-align: middle;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        }
-        .ep-marker.a { background: var(--gold); color: #fff; }
-        .ep-marker.b { background: var(--dark); color: var(--gold); }
-        .ep-tag {
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--gold-dark);
-            margin-bottom: 6px;
-        }
-        .ep-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--dark);
-        }
-        .ep-detail {
-            font-size: 12px;
-            color: var(--text-light);
-            margin-top: 3px;
-        }
+        .app { display: flex; height: 100vh; overflow: hidden; }
 
         /* ─── MAP ─── */
-        .section-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 26px;
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 6px;
-            color: var(--dark);
-        }
-        .section-sub {
-            text-align: center;
-            font-size: 13px;
-            color: var(--text-light);
-            margin-bottom: 18px;
-        }
-        .map-card {
-            background: #fff;
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid rgba(184,150,78,0.1);
-            margin-bottom: 14px;
-        }
-        #interactiveMap {
-            width: 100%;
-            height: 520px;
-        }
-        .map-legend {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 12px 16px;
-            background: var(--bg-warm);
-            border-top: 1px solid rgba(184,150,78,0.1);
-            font-size: 12px;
-            color: var(--text-light);
-        }
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .legend-swatch {
-            width: 14px;
-            height: 14px;
-            border-radius: 3px;
-            border: 1px solid rgba(0,0,0,0.1);
-        }
-        .map-hint {
-            text-align: center;
-            font-size: 12px;
-            color: #bbb;
-            margin-bottom: 28px;
-            margin-top: 4px;
-        }
+        .map-area { flex: 1; position: relative; min-width: 0; }
+        #map { width: 100%; height: 100%; }
 
-        /* ─── BUTTONS ─── */
-        .actions {
+        .map-fab {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
-            gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
+            gap: 10px;
+            z-index: 10;
         }
-        .btn {
+        .fab {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 14px 28px;
-            border-radius: 8px;
+            gap: 7px;
+            padding: 11px 20px;
+            border: none;
+            border-radius: 24px;
             font-family: 'Inter', sans-serif;
             font-size: 13px;
             font-weight: 600;
-            text-decoration: none;
-            border: none;
             cursor: pointer;
-            transition: all 0.25s;
-            letter-spacing: 0.3px;
+            text-decoration: none;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+            transition: all 0.2s;
         }
-        .btn svg { width: 17px; height: 17px; flex-shrink: 0; }
-        .btn-gold {
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            color: #fff;
-            box-shadow: 0 4px 16px rgba(184,150,78,0.3);
-        }
-        .btn-gold:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(184,150,78,0.4); }
-        .btn-dark {
-            background: var(--dark);
-            color: #fff;
-            box-shadow: 0 4px 16px rgba(26,26,46,0.2);
-        }
-        .btn-dark:hover { background: var(--dark-soft); transform: translateY(-1px); }
-        .btn-outline {
-            background: transparent;
-            color: var(--gold-dark);
-            border: 2px solid var(--gold);
-        }
-        .btn-outline:hover { background: var(--gold); color: #fff; }
-        .btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none !important; }
+        .fab svg { width: 17px; height: 17px; flex-shrink: 0; }
+        .fab-blue { background: var(--blue); color: #fff; }
+        .fab-blue:hover { background: var(--blue-dark); }
+        .fab-white { background: #fff; color: var(--dark); }
+        .fab-white:hover { background: var(--gray-bg); }
+        .fab:disabled { opacity: 0.5; cursor: not-allowed; }
 
-        /* ─── DIRECTIONS ─── */
-        .directions-card {
-            background: #fff;
-            border-radius: var(--radius);
-            border: 1px solid rgba(184,150,78,0.1);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-        }
-        .dir-header {
-            background: linear-gradient(135deg, var(--dark), #16213e);
-            padding: 20px 24px;
+        /* ─── PANEL ─── */
+        .panel {
+            width: 420px;
+            height: 100vh;
+            overflow-y: auto;
+            background: var(--white);
+            border-left: 1px solid var(--gray-light);
             display: flex;
-            align-items: center;
-            gap: 14px;
+            flex-direction: column;
         }
-        .dir-header-icon {
-            width: 42px;
-            height: 42px;
-            background: rgba(184,150,78,0.15);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
+        .panel::-webkit-scrollbar { width: 6px; }
+        .panel::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+
+        /* Route header */
+        .panel-header {
+            padding: 18px 20px;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-light);
+            position: sticky;
+            top: 0;
+            z-index: 5;
         }
-        .dir-header-icon svg { width: 20px; height: 20px; color: var(--gold); }
-        .dir-header h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 24px;
-            font-weight: 600;
-            color: #fff;
-            margin: 0;
-        }
-        .dir-header p {
-            font-size: 12px;
-            color: rgba(255,255,255,0.5);
-            margin-top: 2px;
-        }
-        .step {
-            display: flex;
-            gap: 16px;
-            padding: 16px 24px;
-            border-bottom: 1px solid rgba(0,0,0,0.04);
-            align-items: flex-start;
-            transition: background 0.15s;
-        }
-        .step:last-child { border-bottom: none; }
-        .step:hover { background: #fdfcf9; }
-        .step-badge {
-            flex-shrink: 0;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: 800;
-            margin-top: 1px;
-        }
-        .step-badge.num {
-            background: var(--bg);
-            border: 2px solid var(--gold);
-            color: var(--gold-dark);
-        }
-        .step-badge.arrival {
-            background: var(--gold);
-            color: #fff;
-            border: 2px solid var(--gold);
-        }
-        .step-body { flex: 1; }
-        .step-text {
-            font-size: 14px;
-            line-height: 1.55;
+        .panel-title {
+            font-size: 18px;
+            font-weight: 700;
             color: var(--dark);
         }
-        .step-text b { color: var(--dark); }
-        .step-meta {
-            display: flex;
-            gap: 12px;
-            margin-top: 5px;
+        .panel-sub {
             font-size: 12px;
-            color: var(--text-light);
-        }
-        .step-meta span {
-            display: inline-flex;
-            align-items: center;
-            gap: 3px;
-        }
-        .step-landmark {
-            display: inline-block;
-            margin-top: 6px;
-            font-size: 11px;
-            background: #fef9ef;
-            color: var(--gold-dark);
-            padding: 3px 10px;
-            border-radius: 20px;
-            border: 1px solid rgba(184,150,78,0.2);
+            color: var(--gray);
+            margin-top: 2px;
         }
 
-        /* ─── ERROR ─── */
-        .error-msg {
-            background: #fff5f5;
-            color: #c0392b;
-            padding: 16px 24px;
-            border-radius: 8px;
-            border: 1px solid #f5c6cb;
+        /* Stats */
+        .stats-row {
+            display: flex;
+            border-bottom: 1px solid var(--gray-light);
+        }
+        .stat-cell {
+            flex: 1;
+            padding: 14px 10px;
             text-align: center;
-            margin-bottom: 20px;
+            border-right: 1px solid var(--gray-light);
+        }
+        .stat-cell:last-child { border-right: none; }
+        .stat-val {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--blue-dark);
+        }
+        .stat-val.loading { font-size: 12px; font-weight: 400; color: #bbb; }
+        .stat-lbl {
+            font-size: 10px;
+            color: var(--gray);
+            margin-top: 1px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Endpoints */
+        .ep-box { padding: 14px 20px; border-bottom: 1px solid var(--gray-light); }
+        .ep-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 6px 0;
+        }
+        .ep-dot {
+            width: 12px; height: 12px; border-radius: 50%;
+            margin-top: 4px; flex-shrink: 0;
+        }
+        .ep-dot.o { background: var(--blue); box-shadow: 0 0 0 3px rgba(66,133,244,0.2); }
+        .ep-dot.d { background: var(--red); box-shadow: 0 0 0 3px rgba(234,67,53,0.2); }
+        .ep-line { width: 2px; height: 16px; background: var(--gray-light); margin: -3px 0 -3px 5px; }
+        .ep-name { font-size: 14px; font-weight: 600; color: var(--dark); }
+        .ep-addr { font-size: 12px; color: var(--gray); }
+
+        /* ─── SECTION ─── */
+        .section {
+            border-bottom: 1px solid var(--gray-light);
+        }
+        .section-head {
+            padding: 12px 20px 8px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+        }
+
+        /* ─── LOT INFO CARD ─── */
+        .lot-card {
+            padding: 0 20px 14px;
+        }
+        .lot-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        .lot-item {
+            background: var(--gray-bg);
+            border-radius: 8px;
+            padding: 10px 12px;
+        }
+        .lot-item.full { grid-column: 1 / -1; }
+        .lot-item-label {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+        .lot-item-val {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        .lot-item-val small {
+            font-weight: 400;
+            color: var(--gray);
+            font-size: 11px;
+        }
+
+        /* ─── NEARBY PLACES ─── */
+        .nearby-list { padding: 0 20px 14px; }
+        .nearby-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+        }
+        .nearby-item:last-child { border-bottom: none; }
+        .nearby-icon {
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 16px;
+        }
+        .nearby-body { flex: 1; min-width: 0; }
+        .nearby-name { font-size: 13px; font-weight: 600; color: var(--dark); }
+        .nearby-desc { font-size: 11px; color: var(--gray); }
+        .nearby-dist {
+            text-align: right;
+            flex-shrink: 0;
+        }
+        .nearby-dist-val {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--dark2);
+        }
+        .nearby-dist-time {
+            font-size: 11px;
+            color: var(--gray);
+        }
+
+        /* ─── TERRAIN HIGHLIGHT ─── */
+        .terrain-bar {
+            padding: 12px 20px;
+            background: var(--gold-bg);
+            border-bottom: 1px solid #f0e2b8;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 12px;
+            color: #5d4e37;
+            line-height: 1.4;
+        }
+        .terrain-bar strong { color: #3d3322; }
+        .terrain-bar-dot {
+            width: 20px; height: 20px;
+            background: var(--gold);
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        /* ─── DIRECTIONS ─── */
+        .steps { flex: 1; }
+        .step {
+            display: flex;
+            gap: 12px;
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+            transition: background 0.15s;
+        }
+        .step:hover { background: var(--bg); }
+        .step-ic {
+            flex-shrink: 0;
+            width: 26px; height: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1px;
+        }
+        .step-ic svg { width: 20px; height: 20px; color: var(--dark2); }
+        .step-ic.arr svg { color: var(--green); }
+        .step-body { flex: 1; min-width: 0; }
+        .step-txt { font-size: 13px; line-height: 1.45; color: var(--dark); }
+        .step-meta {
+            display: flex; gap: 8px;
+            margin-top: 3px;
+            font-size: 11px; color: var(--gray);
+        }
+        .step-road {
+            display: inline-block;
+            margin-top: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            background: #e8f0fe;
+            color: var(--blue-dark);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+
+        .error-msg {
+            padding: 12px 20px;
+            background: #fce8e6;
+            color: #c5221f;
+            font-size: 13px;
             display: none;
         }
 
-        /* ─── FOOTER ─── */
-        .footer {
-            text-align: center;
-            padding: 28px 20px;
-            font-size: 10px;
-            color: #c0b99f;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-        .footer a { color: var(--gold); text-decoration: none; }
-
         /* ─── RESPONSIVE ─── */
-        @media (max-width: 700px) {
-            .endpoints { grid-template-columns: 1fr; gap: 10px; }
-            .endpoint-connector { display: none; }
-            #interactiveMap { height: 360px; }
-            .stats { grid-template-columns: repeat(2, 1fr); }
-            .btn { padding: 12px 20px; font-size: 12px; }
-            .step { padding: 14px 16px; }
+        @media (max-width: 800px) {
+            .app { flex-direction: column; }
+            .map-area { height: 50vh; flex: none; }
+            .panel {
+                width: 100%; height: 50vh;
+                border-left: none; border-top: 1px solid var(--gray-light);
+            }
+            .fab { padding: 9px 14px; font-size: 12px; }
+            .lot-grid { grid-template-columns: 1fr; }
         }
-
-        /* ─── ANIMATIONS ─── */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(16px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-in { animation: fadeUp 0.5s ease-out forwards; }
-        .delay-1 { animation-delay: 0.1s; opacity: 0; }
-        .delay-2 { animation-delay: 0.2s; opacity: 0; }
-        .delay-3 { animation-delay: 0.3s; opacity: 0; }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
-    <div class="header">
-        <div class="header-bg"></div>
-        <div class="header-inner">
-            <div class="badge">Baja Sur Realtors</div>
-            <h1>Ruta al Terreno — <span>C.C.1-03-032-0883</span></h1>
-            <p class="header-sub">Baja California Sur, M&eacute;xico</p>
+<div class="app">
+
+    <!-- MAP -->
+    <div class="map-area">
+        <div id="map"></div>
+        <div class="map-fab">
+            <button class="fab fab-white" id="btnDl" disabled onclick="downloadMap()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Descargar Imagen
+            </button>
+            <a class="fab fab-blue" id="btnNav" href="#" target="_blank">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                Iniciar Navegaci&oacute;n
+            </a>
         </div>
-        <div class="gold-line"></div>
     </div>
 
-    <div class="container">
+    <!-- PANEL -->
+    <div class="panel">
+        <div class="panel-header">
+            <div class="panel-title">C&oacute;mo Llegar al Terreno</div>
+            <div class="panel-sub">Clave Catastral C.C.1-03-032-0883 &bull; BCS, M&eacute;xico</div>
+        </div>
+
         <div id="error" class="error-msg"></div>
 
-        <!-- STATS -->
-        <div class="stats animate-in delay-1">
-            <div class="stat">
-                <div class="stat-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
-                </div>
-                <div class="stat-label">Distancia</div>
-                <div class="stat-value" id="distance"><span class="loading">...</span></div>
+        <div class="stats-row">
+            <div class="stat-cell">
+                <div class="stat-val" id="duration"><span class="loading">...</span></div>
+                <div class="stat-lbl">Tiempo</div>
             </div>
-            <div class="stat">
-                <div class="stat-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                </div>
-                <div class="stat-label">Tiempo</div>
-                <div class="stat-value" id="duration"><span class="loading">...</span></div>
+            <div class="stat-cell">
+                <div class="stat-val" id="distance"><span class="loading">...</span></div>
+                <div class="stat-lbl">Distancia</div>
             </div>
-            <div class="stat">
-                <div class="stat-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-                </div>
-                <div class="stat-label">Modo</div>
-                <div class="stat-value" style="font-size:18px;">En Auto</div>
-            </div>
-            <div class="stat">
-                <div class="stat-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                </div>
-                <div class="stat-label">Clave</div>
-                <div class="stat-value" style="font-size:14px;">C.C.1-03-032-0883</div>
+            <div class="stat-cell">
+                <div class="stat-val" style="font-size:15px;">En Auto</div>
+                <div class="stat-lbl">Modo</div>
             </div>
         </div>
 
-        <!-- ENDPOINTS -->
-        <div class="endpoints animate-in delay-2">
-            <div class="endpoint">
-                <div class="ep-tag"><span class="ep-marker a">A</span> Origen</div>
-                <div class="ep-name">Hotel California</div>
-                <div class="ep-detail">Todos Santos, BCS, M&eacute;xico</div>
-                <div class="ep-detail" style="color:#bbb; font-size:11px;">23.4484, -110.2233</div>
-            </div>
-            <div class="endpoint-connector">
-                <div class="connector-line"></div>
-                <div class="connector-label">DRIVING</div>
-            </div>
-            <div class="endpoint">
-                <div class="ep-tag"><span class="ep-marker b">B</span> Destino</div>
-                <div class="ep-name">Terreno C.C.1-03-032-0883</div>
-                <div class="ep-detail">Baja California Sur, M&eacute;xico</div>
-                <div class="ep-detail" style="color:#bbb; font-size:11px;">23.5575149, -110.2945742</div>
-            </div>
-        </div>
-
-        <!-- INTERACTIVE MAP -->
-        <h3 class="section-title animate-in delay-3">Mapa Interactivo</h3>
-        <p class="section-sub animate-in delay-3">Explora la ruta, haz zoom y clic en los marcadores para m&aacute;s informaci&oacute;n</p>
-        <div class="map-card animate-in delay-3">
-            <div id="interactiveMap"></div>
-            <div class="map-legend">
-                <div class="legend-item">
-                    <div class="legend-swatch" style="background:var(--gold);"></div>
-                    Ruta de manejo
+        <div class="ep-box">
+            <div class="ep-row">
+                <div class="ep-dot o"></div>
+                <div>
+                    <div class="ep-name">Hotel California</div>
+                    <div class="ep-addr">Todos Santos, BCS, M&eacute;xico</div>
                 </div>
-                <div class="legend-item">
-                    <div class="legend-swatch" style="background:rgba(184,150,78,0.25); border:2px solid var(--gold);"></div>
-                    &Aacute;rea del terreno
-                </div>
-                <div class="legend-item">
-                    <div class="legend-swatch" style="background:var(--gold); border-radius:50%;"></div>
-                    Origen (A)
-                </div>
-                <div class="legend-item">
-                    <div class="legend-swatch" style="background:var(--dark); border-radius:50%;"></div>
-                    Destino (B)
+            </div>
+            <div class="ep-line"></div>
+            <div class="ep-row">
+                <div class="ep-dot d"></div>
+                <div>
+                    <div class="ep-name">Terreno C.C.1-03-032-0883</div>
+                    <div class="ep-addr">23.5575149, -110.2945742</div>
                 </div>
             </div>
         </div>
-        <p class="map-hint">Haz clic en el terreno sombreado para ver informaci&oacute;n catastral</p>
 
-        <!-- ACTIONS -->
-        <div class="actions">
-            <button class="btn btn-gold" id="btnDownload" disabled onclick="downloadMap()">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Descargar Mapa HD
-            </button>
-            <a class="btn btn-dark" id="btnGmaps" href="#" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-                Navegar con Google Maps
-            </a>
-            <button class="btn btn-outline" onclick="document.getElementById('directionsSection').scrollIntoView({behavior:'smooth'})">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
-                Ver Indicaciones
-            </button>
+        <!-- LOT INFO -->
+        <div class="section">
+            <div class="section-head">Datos del Terreno</div>
+            <div class="lot-card">
+                <div class="lot-grid">
+                    <div class="lot-item full">
+                        <div class="lot-item-label">Clave Catastral</div>
+                        <div class="lot-item-val">C.C.1-03-032-0883</div>
+                    </div>
+                    <div class="lot-item">
+                        <div class="lot-item-label">Coordenadas</div>
+                        <div class="lot-item-val" style="font-size:12px;">23.5575149<br>-110.2945742</div>
+                    </div>
+                    <div class="lot-item">
+                        <div class="lot-item-label">Dimensiones Aprox.</div>
+                        <div class="lot-item-val">105 &times; 97 m <small>(~10,185 m&sup2;)</small></div>
+                    </div>
+                    <div class="lot-item">
+                        <div class="lot-item-label">Superficie</div>
+                        <div class="lot-item-val">~1.02 hect&aacute;reas</div>
+                    </div>
+                    <div class="lot-item">
+                        <div class="lot-item-label">Municipio</div>
+                        <div class="lot-item-val">La Paz, BCS</div>
+                    </div>
+                    <div class="lot-item full">
+                        <div class="lot-item-label">Ubicaci&oacute;n</div>
+                        <div class="lot-item-val" style="font-size:12px;">Entre Todos Santos y La Paz, sobre la Carretera Transpeninsular (Mex 1), Baja California Sur</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TERRAIN BAR -->
+        <div class="terrain-bar">
+            <div class="terrain-bar-dot"></div>
+            <div>El <strong>rect&aacute;ngulo dorado</strong> en el mapa marca los l&iacute;mites aproximados del predio. Haz clic en &eacute;l para ver detalles.</div>
+        </div>
+
+        <!-- NEARBY PLACES -->
+        <div class="section">
+            <div class="section-head">Distancias a Lugares Cercanos</div>
+            <div class="nearby-list" id="nearbyList">
+                <div class="nearby-item">
+                    <div class="nearby-icon" style="background:#e8f0fe;">&#9992;</div>
+                    <div class="nearby-body">
+                        <div class="nearby-name">Aeropuerto SJD (Los Cabos)</div>
+                        <div class="nearby-desc">Aeropuerto Internacional</div>
+                    </div>
+                    <div class="nearby-dist" id="dist-sjd">
+                        <div class="nearby-dist-val">~110 km</div>
+                        <div class="nearby-dist-time">~1h 30min</div>
+                    </div>
+                </div>
+                <div class="nearby-item">
+                    <div class="nearby-icon" style="background:#fef7e0;">&#127958;</div>
+                    <div class="nearby-body">
+                        <div class="nearby-name">Todos Santos</div>
+                        <div class="nearby-desc">Pueblo M&aacute;gico &bull; Galer&iacute;as, restaurantes, surf</div>
+                    </div>
+                    <div class="nearby-dist" id="dist-ts">
+                        <div class="nearby-dist-val">~15 km</div>
+                        <div class="nearby-dist-time">~15 min</div>
+                    </div>
+                </div>
+                <div class="nearby-item">
+                    <div class="nearby-icon" style="background:#e6f4ea;">&#127754;</div>
+                    <div class="nearby-body">
+                        <div class="nearby-name">Playa Los Cerritos</div>
+                        <div class="nearby-desc">Surf &bull; Playa de arena, oleaje suave</div>
+                    </div>
+                    <div class="nearby-dist" id="dist-cerritos">
+                        <div class="nearby-dist-val">~20 km</div>
+                        <div class="nearby-dist-time">~20 min</div>
+                    </div>
+                </div>
+                <div class="nearby-item">
+                    <div class="nearby-icon" style="background:#fce8e6;">&#127961;</div>
+                    <div class="nearby-body">
+                        <div class="nearby-name">La Paz</div>
+                        <div class="nearby-desc">Capital de BCS &bull; Malec&oacute;n, ferry, servicios</div>
+                    </div>
+                    <div class="nearby-dist" id="dist-lapaz">
+                        <div class="nearby-dist-val">~60 km</div>
+                        <div class="nearby-dist-time">~50 min</div>
+                    </div>
+                </div>
+                <div class="nearby-item">
+                    <div class="nearby-icon" style="background:#f3e8fd;">&#127965;</div>
+                    <div class="nearby-body">
+                        <div class="nearby-name">Cabo San Lucas</div>
+                        <div class="nearby-desc">Tur&iacute;stico &bull; Marina, El Arco, vida nocturna</div>
+                    </div>
+                    <div class="nearby-dist" id="dist-cabo">
+                        <div class="nearby-dist-val">~85 km</div>
+                        <div class="nearby-dist-time">~1h 10min</div>
+                    </div>
+                </div>
+                <div class="nearby-item">
+                    <div class="nearby-icon" style="background:#e8f0fe;">&#127963;</div>
+                    <div class="nearby-body">
+                        <div class="nearby-name">San Jos&eacute; del Cabo</div>
+                        <div class="nearby-desc">Centro hist&oacute;rico &bull; Galer&iacute;as, golf</div>
+                    </div>
+                    <div class="nearby-dist" id="dist-sanjose">
+                        <div class="nearby-dist-val">~100 km</div>
+                        <div class="nearby-dist-time">~1h 20min</div>
+                    </div>
+                </div>
+                <div class="nearby-item">
+                    <div class="nearby-icon" style="background:#fef7e0;">&#127966;</div>
+                    <div class="nearby-body">
+                        <div class="nearby-name">El Pescadero</div>
+                        <div class="nearby-desc">Comunidad agr&iacute;cola &bull; Granjas org&aacute;nicas, surf</div>
+                    </div>
+                    <div class="nearby-dist" id="dist-pescadero">
+                        <div class="nearby-dist-val">~8 km</div>
+                        <div class="nearby-dist-time">~10 min</div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- DIRECTIONS -->
-        <div id="directionsSection">
-            <div class="directions-card">
-                <div class="dir-header">
-                    <div class="dir-header-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-                    </div>
-                    <div>
-                        <h2>Indicaciones de Manejo</h2>
-                        <p>Paso a paso desde Hotel California</p>
-                    </div>
-                </div>
-                <div id="directionsList">
-                    <div class="step">
-                        <div class="step-body" style="text-align:center;color:#bbb;padding:28px 0;">
-                            Calculando la mejor ruta...
-                        </div>
+        <div class="section">
+            <div class="section-head">Indicaciones paso a paso</div>
+            <div class="steps" id="dirList">
+                <div class="step">
+                    <div class="step-body" style="text-align:center;color:#bbb;padding:20px 0;">
+                        Calculando ruta...
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="footer">
-        Baja Sur Realtors &mdash; Bienes Ra&iacute;ces de Lujo &mdash; Baja California Sur, M&eacute;xico
-    </div>
+<script>
+    var API_KEY = 'AIzaSyBgAXx3AZcrcu-yZUKpDtlBRvZFad7-qUU';
+    var ORIGIN = { lat: 23.4484, lng: -110.2233 };
+    var DEST   = { lat: 23.5575149, lng: -110.2945742 };
 
-    <script>
-        const API_KEY = 'AIzaSyBgAXx3AZcrcu-yZUKpDtlBRvZFad7-qUU';
-        const ORIGIN = { lat: 23.4484, lng: -110.2233 };
-        const DEST   = { lat: 23.5575149, lng: -110.2945742 };
+    var LOT = [
+        { lat: 23.55795, lng: -110.29510 },
+        { lat: 23.55795, lng: -110.29405 },
+        { lat: 23.55708, lng: -110.29405 },
+        { lat: 23.55708, lng: -110.29510 }
+    ];
 
-        // Approximate lot polygon around destination (~100m x 80m parcel)
-        const LOT_POLYGON = [
-            { lat: 23.55795, lng: -110.29510 },
-            { lat: 23.55795, lng: -110.29405 },
-            { lat: 23.55708, lng: -110.29405 },
-            { lat: 23.55708, lng: -110.29510 }
-        ];
+    // Key nearby places for distance calculation
+    var NEARBY = [
+        { id: 'dist-sjd',       loc: { lat: 23.1518, lng: -109.7215 }, name: 'Aeropuerto SJD' },
+        { id: 'dist-ts',        loc: { lat: 23.4484, lng: -110.2233 }, name: 'Todos Santos' },
+        { id: 'dist-cerritos',  loc: { lat: 23.3185, lng: -110.1733 }, name: 'Playa Los Cerritos' },
+        { id: 'dist-lapaz',     loc: { lat: 24.1426, lng: -110.3128 }, name: 'La Paz' },
+        { id: 'dist-cabo',      loc: { lat: 22.8905, lng: -109.9167 }, name: 'Cabo San Lucas' },
+        { id: 'dist-sanjose',   loc: { lat: 23.0598, lng: -109.7006 }, name: 'San José del Cabo' },
+        { id: 'dist-pescadero', loc: { lat: 23.3596, lng: -110.1519 }, name: 'El Pescadero' }
+    ];
 
-        let staticMapUrl = '';
-        let routePolyline = '';
+    var staticMapUrl = '';
 
-        // Google Maps navigation link
-        document.getElementById('btnGmaps').href =
-            'https://www.google.com/maps/dir/?api=1'
-            + '&origin=' + ORIGIN.lat + ',' + ORIGIN.lng
-            + '&destination=' + DEST.lat + ',' + DEST.lng
-            + '&travelmode=driving';
+    document.getElementById('btnNav').href =
+        'https://www.google.com/maps/dir/?api=1'
+        + '&origin=' + ORIGIN.lat + ',' + ORIGIN.lng
+        + '&destination=' + DEST.lat + ',' + DEST.lng
+        + '&travelmode=driving';
 
-        function showError(msg) {
-            const el = document.getElementById('error');
-            el.textContent = msg;
-            el.style.display = 'block';
-        }
+    function showError(m) {
+        var e = document.getElementById('error');
+        e.textContent = m;
+        e.style.display = 'block';
+    }
 
-        function initMap() {
-            const map = new google.maps.Map(document.getElementById('interactiveMap'), {
-                zoom: 12,
-                center: { lat: (ORIGIN.lat + DEST.lat) / 2, lng: (ORIGIN.lng + DEST.lng) / 2 },
-                mapTypeId: 'hybrid',
-                mapTypeControl: true,
-                mapTypeControlOptions: {
-                    style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-                    position: google.maps.ControlPosition.TOP_RIGHT
-                },
-                fullscreenControl: true,
-                streetViewControl: true,
-                zoomControl: true,
-                gestureHandling: 'greedy',
-                styles: []
-            });
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 12,
+            center: { lat: (ORIGIN.lat + DEST.lat) / 2, lng: (ORIGIN.lng + DEST.lng) / 2 },
+            mapTypeId: 'hybrid',
+            mapTypeControl: true,
+            mapTypeControlOptions: { position: google.maps.ControlPosition.TOP_LEFT },
+            fullscreenControl: true,
+            streetViewControl: true,
+            zoomControl: true,
+            gestureHandling: 'greedy'
+        });
 
-            // Draw lot polygon
-            const lotPoly = new google.maps.Polygon({
-                paths: LOT_POLYGON,
-                strokeColor: '#b8964e',
-                strokeOpacity: 0.95,
-                strokeWeight: 3,
-                fillColor: '#b8964e',
-                fillOpacity: 0.25,
-                map: map,
-                zIndex: 10
-            });
+        // Lot polygon
+        var lotPoly = new google.maps.Polygon({
+            paths: LOT,
+            strokeColor: '#FFD700',
+            strokeOpacity: 1,
+            strokeWeight: 3,
+            fillColor: '#FFD700',
+            fillOpacity: 0.30,
+            map: map,
+            zIndex: 10
+        });
 
-            // Lot info window
-            const lotInfo = new google.maps.InfoWindow({
-                content: '<div style="font-family:Inter,sans-serif;padding:6px 2px;min-width:200px;">'
-                    + '<div style="font-size:10px;font-weight:700;letter-spacing:2px;color:#b8964e;text-transform:uppercase;margin-bottom:6px;">Informaci\u00f3n Catastral</div>'
-                    + '<div style="font-size:15px;font-weight:700;color:#1a1a2e;margin-bottom:4px;">Terreno C.C.1-03-032-0883</div>'
-                    + '<div style="font-size:12px;color:#666;line-height:1.5;">'
-                    + '<strong>Clave:</strong> C.C.1-03-032-0883<br>'
-                    + '<strong>Coordenadas:</strong> 23.5575, -110.2946<br>'
-                    + '<strong>Ubicaci\u00f3n:</strong> BCS, M\u00e9xico'
-                    + '</div></div>'
-            });
-            lotPoly.addListener('click', function(e) {
-                lotInfo.setPosition(e.latLng);
-                lotInfo.open(map);
-            });
+        // Lot label
+        var lotLabel = new google.maps.Marker({
+            position: { lat: 23.55751, lng: -110.29457 },
+            map: map,
+            icon: {
+                path: google.maps.SymbolPath.CIRCLE,
+                scale: 0
+            },
+            label: {
+                text: 'TERRENO\nC.C.1-03-032-0883',
+                color: '#FFD700',
+                fontWeight: '700',
+                fontSize: '11px'
+            },
+            zIndex: 11
+        });
 
-            // Directions
-            const directionsService = new google.maps.DirectionsService();
-            const directionsRenderer = new google.maps.DirectionsRenderer({
-                map: map,
-                suppressMarkers: true,
-                polylineOptions: {
-                    strokeColor: '#b8964e',
-                    strokeOpacity: 0.85,
-                    strokeWeight: 6
-                }
-            });
+        var lotInfo = new google.maps.InfoWindow({
+            content: '<div style="font-family:Inter,sans-serif;padding:6px;min-width:220px;">'
+                + '<div style="font-size:15px;font-weight:700;color:#202124;margin-bottom:6px;">Terreno C.C.1-03-032-0883</div>'
+                + '<table style="font-size:12px;color:#555;border-collapse:collapse;width:100%;">'
+                + '<tr><td style="padding:3px 8px 3px 0;font-weight:600;color:#333;">Clave Catastral</td><td>C.C.1-03-032-0883</td></tr>'
+                + '<tr><td style="padding:3px 8px 3px 0;font-weight:600;color:#333;">Coordenadas</td><td>23.5575, -110.2946</td></tr>'
+                + '<tr><td style="padding:3px 8px 3px 0;font-weight:600;color:#333;">Superficie</td><td>~10,185 m\u00b2 (1.02 ha)</td></tr>'
+                + '<tr><td style="padding:3px 8px 3px 0;font-weight:600;color:#333;">Dimensiones</td><td>~105 x 97 m</td></tr>'
+                + '<tr><td style="padding:3px 8px 3px 0;font-weight:600;color:#333;">Municipio</td><td>La Paz, BCS</td></tr>'
+                + '</table></div>'
+        });
+        lotPoly.addListener('click', function(e) {
+            lotInfo.setPosition(e.latLng);
+            lotInfo.open(map);
+        });
+        lotLabel.addListener('click', function() {
+            lotInfo.setPosition(lotLabel.getPosition());
+            lotInfo.open(map);
+        });
 
-            directionsService.route({
-                origin: new google.maps.LatLng(ORIGIN.lat, ORIGIN.lng),
-                destination: new google.maps.LatLng(DEST.lat, DEST.lng),
+        // Route
+        var dirService = new google.maps.DirectionsService();
+        var dirRenderer = new google.maps.DirectionsRenderer({
+            map: map,
+            suppressMarkers: false,
+            polylineOptions: { strokeColor: '#4285f4', strokeOpacity: 0.9, strokeWeight: 6 }
+        });
+
+        dirService.route({
+            origin: new google.maps.LatLng(ORIGIN.lat, ORIGIN.lng),
+            destination: new google.maps.LatLng(DEST.lat, DEST.lng),
+            travelMode: google.maps.TravelMode.DRIVING
+        }, function(res, st) {
+            if (st !== 'OK') { showError('No se pudo calcular la ruta: ' + st); return; }
+
+            dirRenderer.setDirections(res);
+            var route = res.routes[0], leg = route.legs[0];
+
+            document.getElementById('distance').textContent = leg.distance.text;
+            document.getElementById('duration').textContent = leg.duration.text;
+
+            // Static map for download
+            var pe = route.overview_polyline;
+            staticMapUrl = 'https://maps.googleapis.com/maps/api/staticmap?'
+                + 'size=1280x960&scale=2&maptype=hybrid'
+                + '&markers=color:blue%7Clabel:A%7C' + ORIGIN.lat + ',' + ORIGIN.lng
+                + '&markers=color:red%7Clabel:B%7C' + DEST.lat + ',' + DEST.lng
+                + '&path=' + encodeURIComponent('color:0x4285f4ff|weight:5|enc:' + pe)
+                + '&key=' + API_KEY;
+
+            var t = new Image();
+            t.onload = function() { document.getElementById('btnDl').disabled = false; };
+            t.src = staticMapUrl;
+
+            renderSteps(leg.steps);
+        });
+
+        // Calculate real distances to nearby places
+        calcNearby(dirService);
+    }
+
+    function calcNearby(dirService) {
+        NEARBY.forEach(function(p) {
+            dirService.route({
+                origin: new google.maps.LatLng(DEST.lat, DEST.lng),
+                destination: new google.maps.LatLng(p.loc.lat, p.loc.lng),
                 travelMode: google.maps.TravelMode.DRIVING
-            }, function(result, status) {
-                if (status !== 'OK') {
-                    showError('Error al calcular la ruta: ' + status);
-                    return;
+            }, function(res, st) {
+                if (st !== 'OK') return;
+                var l = res.routes[0].legs[0];
+                var el = document.getElementById(p.id);
+                if (el) {
+                    el.innerHTML = '<div class="nearby-dist-val">' + l.distance.text + '</div>'
+                        + '<div class="nearby-dist-time">' + l.duration.text + '</div>';
                 }
-
-                directionsRenderer.setDirections(result);
-
-                const route = result.routes[0];
-                const leg = route.legs[0];
-                routePolyline = route.overview_polyline;
-
-                // Custom markers — Origin
-                new google.maps.Marker({
-                    position: leg.start_location,
-                    map: map,
-                    label: { text: 'A', color: '#fff', fontWeight: '800', fontSize: '13px' },
-                    title: 'Hotel California \u2014 Origen',
-                    icon: {
-                        path: google.maps.SymbolPath.CIRCLE,
-                        scale: 18,
-                        fillColor: '#b8964e',
-                        fillOpacity: 1,
-                        strokeColor: '#fff',
-                        strokeWeight: 3
-                    },
-                    zIndex: 20
-                }).addListener('click', function() {
-                    new google.maps.InfoWindow({
-                        content: '<div style="font-family:Inter,sans-serif;padding:6px 2px;">'
-                            + '<div style="font-size:10px;font-weight:700;letter-spacing:2px;color:#b8964e;text-transform:uppercase;margin-bottom:4px;">Punto de Partida</div>'
-                            + '<div style="font-size:15px;font-weight:700;color:#1a1a2e;">Hotel California</div>'
-                            + '<div style="font-size:12px;color:#666;margin-top:3px;">Todos Santos, BCS, M\u00e9xico</div>'
-                            + '</div>'
-                    }).open(map, this);
-                });
-
-                // Custom markers — Destination
-                new google.maps.Marker({
-                    position: leg.end_location,
-                    map: map,
-                    label: { text: 'B', color: '#b8964e', fontWeight: '800', fontSize: '13px' },
-                    title: 'Terreno C.C.1-03-032-0883 \u2014 Destino',
-                    icon: {
-                        path: google.maps.SymbolPath.CIRCLE,
-                        scale: 18,
-                        fillColor: '#1a1a2e',
-                        fillOpacity: 1,
-                        strokeColor: '#b8964e',
-                        strokeWeight: 3
-                    },
-                    zIndex: 20
-                }).addListener('click', function() {
-                    new google.maps.InfoWindow({
-                        content: '<div style="font-family:Inter,sans-serif;padding:6px 2px;">'
-                            + '<div style="font-size:10px;font-weight:700;letter-spacing:2px;color:#b8964e;text-transform:uppercase;margin-bottom:4px;">Destino</div>'
-                            + '<div style="font-size:15px;font-weight:700;color:#1a1a2e;">Terreno C.C.1-03-032-0883</div>'
-                            + '<div style="font-size:12px;color:#666;margin-top:3px;">23.5575149, -110.2945742</div>'
-                            + '</div>'
-                    }).open(map, this);
-                });
-
-                // Update stats
-                document.getElementById('distance').textContent = leg.distance.text;
-                document.getElementById('duration').textContent = leg.duration.text;
-
-                // Build static map URL
-                var pathParam = 'color:0xb8964eff|weight:5|enc:' + routePolyline;
-                staticMapUrl = 'https://maps.googleapis.com/maps/api/staticmap?'
-                    + 'size=1280x960&scale=2&maptype=hybrid'
-                    + '&markers=color:0xb8964e%7Clabel:A%7C' + ORIGIN.lat + ',' + ORIGIN.lng
-                    + '&markers=color:0x1a1a2e%7Clabel:B%7C' + DEST.lat + ',' + DEST.lng
-                    + '&path=' + encodeURIComponent(pathParam)
-                    + '&key=' + API_KEY;
-
-                var testImg = new Image();
-                testImg.onload = function() { document.getElementById('btnDownload').disabled = false; };
-                testImg.src = staticMapUrl;
-
-                // Render directions
-                renderDirections(leg);
             });
-        }
+        });
+    }
 
-        // Road / landmark hints based on common BCS route features
-        function getLandmarkHint(instruction) {
-            var lower = instruction.toLowerCase();
-            if (lower.includes('transpeninsular') || lower.includes('mex 1') || lower.includes('méxico 1'))
-                return 'Carretera Transpeninsular (Mex 1)';
-            if (lower.includes('mex 19') || lower.includes('méxico 19'))
-                return 'Carretera Federal 19 — Costa del Pac\u00edfico';
-            if (lower.includes('todos santos'))
-                return 'Pueblo M\u00e1gico de Todos Santos';
-            if (lower.includes('la paz'))
-                return 'Rumbo a La Paz, capital de BCS';
-            if (lower.includes('san josé') || lower.includes('san jose'))
-                return 'Corredor San Jos\u00e9 del Cabo';
-            if (lower.includes('cabo san lucas') || lower.includes('los cabos'))
-                return 'Zona de Los Cabos';
-            if (lower.includes('el pescadero'))
-                return 'Comunidad de El Pescadero';
-            return null;
-        }
+    function ico(m) {
+        if (!m) return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>';
+        if (m.includes('left'))
+            return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 10 9 10 9 16"/><path d="M20 20V13a2 2 0 00-2-2H9"/></svg>';
+        if (m.includes('right'))
+            return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 10 15 10 15 16"/><path d="M4 20V13a2 2 0 012-2h9"/></svg>';
+        if (m.includes('straight') || m.includes('merge') || m.includes('continue'))
+            return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="8 9 12 5 16 9"/></svg>';
+        if (m.includes('roundabout'))
+            return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 16v5"/></svg>';
+        return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>';
+    }
 
-        function renderDirections(leg) {
-            var container = document.getElementById('directionsList');
-            var html = '';
+    function roadTag(inst) {
+        var l = inst.toLowerCase();
+        if (l.includes('transpeninsular') || l.includes('mex 1') || l.includes('méxico 1')) return 'Mex 1 — Transpeninsular';
+        if (l.includes('mex 19') || l.includes('méxico 19')) return 'Mex 19 — Pac\u00edfico';
+        if (l.includes('todos santos')) return 'Todos Santos';
+        if (l.includes('la paz')) return 'Rumbo a La Paz';
+        if (l.includes('pescadero')) return 'El Pescadero';
+        return null;
+    }
 
-            leg.steps.forEach(function(step, i) {
-                var dist = step.distance ? step.distance.text : '';
-                var dur = step.duration ? step.duration.text : '';
-                var landmark = getLandmarkHint(step.instructions);
-
-                html += '<div class="step">'
-                    + '<div class="step-badge num">' + (i + 1) + '</div>'
-                    + '<div class="step-body">'
-                    + '<div class="step-text">' + step.instructions + '</div>'
-                    + '<div class="step-meta">'
-                    + (dist ? '<span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg> ' + dist + '</span>' : '')
-                    + (dur ? '<span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> ' + dur + '</span>' : '')
-                    + '</div>'
-                    + (landmark ? '<div class="step-landmark">\u2605 ' + landmark + '</div>' : '')
-                    + '</div></div>';
-            });
-
-            // Arrival step
-            html += '<div class="step" style="background:#fdfcf9;">'
-                + '<div class="step-badge arrival">\u2713</div>'
-                + '<div class="step-body">'
-                + '<div class="step-text"><strong>Has llegado a tu destino</strong><br>Terreno con Clave Catastral C.C.1-03-032-0883</div>'
-                + '<div class="step-meta">'
-                + '<span>23.5575149, -110.2945742</span>'
-                + '<span>Baja California Sur</span>'
-                + '</div>'
-                + '<div class="step-landmark">\u2605 \u00c1rea del terreno marcada en el mapa</div>'
+    function renderSteps(steps) {
+        var c = document.getElementById('dirList'), h = '';
+        steps.forEach(function(s) {
+            var d = s.distance ? s.distance.text : '';
+            var t = s.duration ? s.duration.text : '';
+            var r = roadTag(s.instructions);
+            h += '<div class="step"><div class="step-ic">' + ico(s.maneuver||'') + '</div>'
+                + '<div class="step-body"><div class="step-txt">' + s.instructions + '</div>'
+                + '<div class="step-meta">' + (d?'<span>'+d+'</span>':'') + (t?'<span>'+t+'</span>':'') + '</div>'
+                + (r?'<div class="step-road">'+r+'</div>':'')
                 + '</div></div>';
+        });
+        h += '<div class="step" style="background:#e6f4ea;">'
+            + '<div class="step-ic arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>'
+            + '<div class="step-body"><div class="step-txt"><strong>Llegaste a tu destino</strong></div>'
+            + '<div class="step-meta"><span>Terreno C.C.1-03-032-0883</span></div></div></div>';
+        c.innerHTML = h;
+    }
 
-            container.innerHTML = html;
-        }
-
-        function downloadMap() {
-            if (!staticMapUrl) return;
-            var btn = document.getElementById('btnDownload');
-            var origHTML = btn.innerHTML;
-            btn.innerHTML = 'Generando HD...';
-            btn.disabled = true;
-
-            var canvas = document.createElement('canvas');
-            var ctx = canvas.getContext('2d');
-            var img = new Image();
-            img.crossOrigin = 'anonymous';
-            img.onload = function() {
-                canvas.width = img.naturalWidth;
-                canvas.height = img.naturalHeight;
-                ctx.drawImage(img, 0, 0);
-
-                // Branding bar
-                var barH = 72;
-                ctx.fillStyle = 'rgba(26,26,46,0.85)';
-                ctx.fillRect(0, canvas.height - barH, canvas.width, barH);
-
-                // Gold accent line
-                ctx.fillStyle = '#b8964e';
-                ctx.fillRect(0, canvas.height - barH, canvas.width, 3);
-
-                // Left: brand
-                ctx.font = '700 26px Inter, sans-serif';
-                ctx.fillStyle = '#b8964e';
-                ctx.textAlign = 'left';
-                ctx.fillText('BAJA SUR REALTORS', 28, canvas.height - 26);
-
-                // Right: property
-                ctx.font = '400 20px Inter, sans-serif';
-                ctx.fillStyle = '#ffffff';
-                ctx.textAlign = 'right';
-                ctx.fillText('Terreno C.C.1-03-032-0883 \u2014 BCS, M\u00e9xico', canvas.width - 28, canvas.height - 26);
-
-                canvas.toBlob(function(blob) {
-                    var url = URL.createObjectURL(blob);
-                    var a = document.createElement('a');
-                    a.href = url;
-                    a.download = 'Ruta_Terreno_CC1-03-032-0883_HD.png';
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                    URL.revokeObjectURL(url);
-                    btn.innerHTML = origHTML;
-                    btn.disabled = false;
-                }, 'image/png');
-            };
-            img.onerror = function() {
-                window.open(staticMapUrl, '_blank');
-                btn.innerHTML = origHTML;
-                btn.disabled = false;
-            };
-            img.src = staticMapUrl;
-        }
-    </script>
-
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgAXx3AZcrcu-yZUKpDtlBRvZFad7-qUU&callback=initMap">
-    </script>
-
+    function downloadMap() {
+        if (!staticMapUrl) return;
+        var b = document.getElementById('btnDl'), o = b.innerHTML;
+        b.innerHTML = 'Generando...'; b.disabled = true;
+        var cv = document.createElement('canvas'), cx = cv.getContext('2d');
+        var im = new Image(); im.crossOrigin = 'anonymous';
+        im.onload = function() {
+            cv.width = im.naturalWidth; cv.height = im.naturalHeight;
+            cx.drawImage(im, 0, 0);
+            cv.toBlob(function(bl) {
+                var u = URL.createObjectURL(bl), a = document.createElement('a');
+                a.href = u; a.download = 'Ruta_Terreno_CC1-03-032-0883.png';
+                document.body.appendChild(a); a.click();
+                document.body.removeChild(a); URL.revokeObjectURL(u);
+                b.innerHTML = o; b.disabled = false;
+            }, 'image/png');
+        };
+        im.onerror = function() { window.open(staticMapUrl,'_blank'); b.innerHTML=o; b.disabled=false; };
+        im.src = staticMapUrl;
+    }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgAXx3AZcrcu-yZUKpDtlBRvZFad7-qUU&callback=initMap"></script>
 </body>
 </html>
