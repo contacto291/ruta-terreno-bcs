@@ -1,0 +1,12 @@
+{
+  "name": "ruta-terreno-bcs",
+  "version": "1.0.0",
+  "description": "Ruta de manejo al Terreno C.C.1-03-032-0883 — Baja Sur Realtors",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
